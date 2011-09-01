@@ -1,0 +1,50 @@
+# setup
+
+config {
+	devnullrobots {
+		useDefault = {$devnullrobots.useDefault}
+		defaultRules {
+			defaultDisallow (
+User-agent: *
+Disallow: /
+			)
+			defaultAllow (
+User-agent: *
+Disallow: /fileadmin
+Disallow: /t3lib
+Disallow: /typo3conf
+Disallow: /typo3temp
+Allow:    /fileadmin/media
+			)
+		}
+	}
+}
+
+# fix to switch of source code optimization
+# you have to ensure dev_null_robots ist loaded after sourceopt
+
+[globalVar = GP:type = {$devnullrobots.typeNum}]
+config.sourceopt.enabled = 0
+[global]
+
+# page type for robots.txt
+
+includeLibs.tx_devnullrobots_robots = EXT:dev_null_robots/class.tx_devnullrobots.php
+tx_devnullrobots_robots = PAGE
+tx_devnullrobots_robots {
+	typeNum                   = {$devnullrobots.typeNum}
+	10 = USER
+	10 {
+		userFunc = tx_devnullrobots->main
+	}
+	config {
+		disableAllHeaderCode = 1
+		additionalHeaders    = Content-type: text/plain
+		admPanel             = 0
+
+		## disable indexed search
+		index_enable         = 0
+		xhtml_cleaning       = 0
+
+	}
+}

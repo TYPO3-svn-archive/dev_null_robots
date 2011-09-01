@@ -1,0 +1,7 @@
+devnullrobots {
+    # cat=dev-null-robots/others/10; type=options[off,disallow,allow]; label=Append default robots.txt setup
+	useDefault = allow
+
+	# cat=dev-null-robots.expert/others/20; type=string; label=page.typeNum for robots.txt
+	typeNum = 1964
+}

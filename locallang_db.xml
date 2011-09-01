@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'dev_null_robots'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_devnullrobots_crawlercfg">Crawler config</label>
+			<label index="tx_devnullrobots_crawlercfg.useragent">User-agent</label>
+			<label index="tx_devnullrobots_crawlercfg.crawlercfg">Crawler config</label>
+			<label index="sys_domain.tx_devnullrobots_crawler">crawler config list</label>
+			<label index="sys_domain.tx_devnullrobots_default">Default crawler directives</label>
+		</languageKey>
+	</data>
+</T3locallang>
