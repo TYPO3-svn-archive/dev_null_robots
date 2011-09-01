@@ -60,8 +60,8 @@ class tx_devnullrobots extends tslib_pibase {
 		// ignore pssed $conf and get the whole config for use tx_devnullrobots
 		$this->conf = $GLOBALS['TSFE']->tmpl->setup['config.']['devnullrobots.'];
 
-		// get original page uid from GET/POST vars
-		$pageUID = t3lib_div::_GP('id');
+		// get original page uid
+		$pageUID = $GLOBALS["TSFE"]->id;
 
 		$selectClause = array(
 			'pid = ' . $pageUID,						// page holding record
