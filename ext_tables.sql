@@ -22,5 +22,13 @@ CREATE TABLE tx_devnullrobots_crawlercfg (
 #
 CREATE TABLE sys_domain (
 	tx_devnullrobots_crawler text,
-	tx_devnullrobots_default text
+	tx_devnullrobots_default text,
+    tx_devnullrobots_sitemap tinyint(3) DEFAULT '0' NOT NULL
+);
+
+#
+# Table structure for table 'pages'
+#
+CREATE TABLE pages (
+    tx_devnullrobots_flags int(11) DEFAULT '0' NOT NULL
 );

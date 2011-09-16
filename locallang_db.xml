@@ -11,6 +11,10 @@
 			<label index="tx_devnullrobots_crawlercfg.crawlercfg">Crawler config</label>
 			<label index="sys_domain.tx_devnullrobots_crawler">crawler config list</label>
 			<label index="sys_domain.tx_devnullrobots_default">Default crawler directives</label>
+            <label index="sys_domain.tx_devnullrobots_sitemap">sitemap.xml</label>
+            <label index="pages.tx_devnullrobots_flags.F.1">noindex - Do not index this page</label>
+            <label index="pages.tx_devnullrobots_flags.F.2">nofollow - Do not follow this page</label>
+            <label index="pages.tx_devnullrobots_flags">meta tag for search engines policy:</label>
 		</languageKey>
 	</data>
 </T3locallang>

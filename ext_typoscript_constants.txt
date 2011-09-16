@@ -1,7 +1,17 @@
-devnullrobots {
-    # cat=dev-null-robots/others/10; type=options[off,disallow,allow]; label=Append default robots.txt setup
+config.devnullrobots {
+
+    # cat=dev-null-robots: robots.txt/basic/10; type=options[off,disallow,allow]; label=Default robots.txt setup
 	useDefault = allow
 
-	# cat=dev-null-robots.expert/others/20; type=string; label=page.typeNum for robots.txt
+    # cat=dev-null-robots: robots.txt/basic/20; type=string; label=Default filename for sitemap reference in robots.txt
+	sitemapName = sitemap.xml
+
+    # cat=dev-null-robots: meta/basic/10; type=options[No=0,Yes=1]; label=Write a meta tag for search policy in the html header
+	metaRobots = 1
+
+    # cat=dev-null-robots: meta/basic/20; type=int; label=Meta bitmask (0 = index,follow, 1 = noindex, 2 = nofollow)
+	metaDefault = 0
+
+	# cat=dev-null-robots: expert/basic/10; type=string; label=page.typeNum for robots.txt
 	typeNum = 1964
 }

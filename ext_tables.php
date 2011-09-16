@@ -32,7 +32,7 @@ $tempColumns = array (
 		)
 	),
 	'tx_devnullrobots_default' => array (		
-		'exclude' => 0,		
+		'exclude' => 0,
 		'label' => 'LLL:EXT:dev_null_robots/locallang_db.xml:sys_domain.tx_devnullrobots_default',		
 		'config' => array (
 			'type' => 'text',
@@ -40,10 +40,35 @@ $tempColumns = array (
 			'rows' => '8',
 		)
 	),
+    'tx_devnullrobots_sitemap' => array (        
+        'exclude' => 0,        
+        'label' => 'LLL:EXT:dev_null_robots/locallang_db.xml:sys_domain.tx_devnullrobots_sitemap',        
+        'config' => array (
+            'type' => 'check',
+        )
+    ),
 );
 
+$tempPages = array(
+    'tx_devnullrobots_flags' => array(
+        'exclude' => true,
+        'label' => 'LLL:EXT:dev_null_robots/locallang_db.xml:pages.tx_devnullrobots_flags',
+        'config' => array(
+            'type' => 'check',
+            'cols' => 1,
+            'items' => array(
+                array('LLL:EXT:dev_null_robots/locallang_db.xml:pages.tx_devnullrobots_flags.F.1', ''),
+                array('LLL:EXT:dev_null_robots/locallang_db.xml:pages.tx_devnullrobots_flags.F.2', ''),
+            ),
+        )
+    ),
+);
 
 t3lib_div::loadTCA('sys_domain');
 t3lib_extMgm::addTCAcolumns('sys_domain',$tempColumns,1);
-t3lib_extMgm::addToAllTCAtypes('sys_domain','tx_devnullrobots_crawler;;;;1-1-1, tx_devnullrobots_default');
+t3lib_extMgm::addToAllTCAtypes('sys_domain','tx_devnullrobots_crawler;;;;1-1-1, tx_devnullrobots_default, tx_devnullrobots_sitemap');
+
+t3lib_div::loadTCA('pages');
+t3lib_extMgm::addTCAcolumns('pages',$tempPages,1);
+t3lib_extMgm::addToAllTCAtypes('pages','tx_devnullrobots_flags;;;;1-1-1', '', 'before:abstract');
 ?>

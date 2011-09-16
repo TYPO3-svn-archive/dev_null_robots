@@ -2,7 +2,10 @@
 
 config {
 	devnullrobots {
-		useDefault = {$devnullrobots.useDefault}
+		metaRobots  = {$config.devnullrobots.metaRobots}
+		metaDefault = {$config.devnullrobots.metaDefault}
+		sitemapName = {$config.devnullrobots.sitemapName}
+		useDefault  = {$config.devnullrobots.useDefault}
 		defaultRules {
 			defaultDisallow (
 User-agent: *
@@ -14,7 +17,8 @@ Disallow: /fileadmin
 Disallow: /t3lib
 Disallow: /typo3conf
 Disallow: /typo3temp
-Allow:    /fileadmin/media
+Allow: /fileadmin/media
+Allow: /
 			)
 		}
 	}
@@ -23,7 +27,7 @@ Allow:    /fileadmin/media
 # fix to switch of source code optimization
 # you have to ensure dev_null_robots ist loaded after sourceopt
 
-[globalVar = GP:type = {$devnullrobots.typeNum}]
+[globalVar = GP:type = {$config.devnullrobots.typeNum}]
 config.sourceopt.enabled = 0
 [global]
 
@@ -32,7 +36,7 @@ config.sourceopt.enabled = 0
 includeLibs.tx_devnullrobots_robots = EXT:dev_null_robots/class.tx_devnullrobots.php
 tx_devnullrobots_robots = PAGE
 tx_devnullrobots_robots {
-	typeNum                   = {$devnullrobots.typeNum}
+	typeNum                   = {$config.devnullrobots.typeNum}
 	10 = USER
 	10 {
 		userFunc = tx_devnullrobots->main
@@ -44,7 +48,6 @@ tx_devnullrobots_robots {
 
 		## disable indexed search
 		index_enable         = 0
-		xhtml_cleaning       = 0
-
 	}
 }
+
