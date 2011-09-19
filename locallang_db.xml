@@ -16,5 +16,16 @@
             <label index="pages.tx_devnullrobots_flags.F.2">nofollow - Do not follow this page</label>
             <label index="pages.tx_devnullrobots_flags">meta tag for search engines policy:</label>
 		</languageKey>
+		<languageKey index="de" type="array">
+            <label index="tx_devnullrobots_crawlercfg">Crawler Konfiguration</label>
+            <label index="tx_devnullrobots_crawlercfg.useragent">User-agent</label>
+            <label index="tx_devnullrobots_crawlercfg.crawlercfg">Crawler Konfiguration</label>
+            <label index="sys_domain.tx_devnullrobots_crawler">Crawler Konfigurations-Liste</label>
+            <label index="sys_domain.tx_devnullrobots_default">Standard Crawler Regeln</label>
+            <label index="sys_domain.tx_devnullrobots_sitemap">sitemap.xml</label>
+            <label index="pages.tx_devnullrobots_flags.F.1">noindex - Diese Seite nicht indexieren.</label>
+            <label index="pages.tx_devnullrobots_flags.F.2">nofollow - Links auf dieser Seite nicht folgen.</label>
+            <label index="pages.tx_devnullrobots_flags">Regeln für Suchmaschinen</label>
+        </languageKey>
 	</data>
 </T3locallang>
