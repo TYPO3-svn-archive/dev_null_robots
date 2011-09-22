@@ -60,17 +60,25 @@ class tx_devnullrobots {
 			'# '.$domain
 		);
 
-		// get rootline and root page of domain
+		// get rootline
 		$rootline = $GLOBALS['TSFE']->sys_page->getRootLine($GLOBALS['TSFE']->id);
-		$rootPage = $rootline[0];
-		$rootPid  = $rootPage['uid'];
-		
+
+		// walk down root line to first siteroot
+		// this page must hold the domain records
+		foreach($rootline as $key => $page) {
+			if($page['is_siteroot']) {
+				$rootUid = $page['uid'];
+				break;
+			}
+		}
+
+		// build query to access page content
+		// and ensure link between doamin and page
 		$selectClause = array(
-			'pid = ' . $rootPid,						// page holding domain record
+			'pid = ' . $rootUid,						// page holding domain record
 			'domainName = "' . $domain . '"',			// domain name
 		);
 
-		// build query to access page content
 		$dbRes = $GLOBALS['TYPO3_DB']->exec_SELECTquery('*', 'sys_domain', implode(' AND ', $selectClause));
 		
 		if($rowDomain = $GLOBALS['TYPO3_DB']->sql_fetch_assoc($dbRes)) {
